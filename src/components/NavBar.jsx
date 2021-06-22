@@ -76,13 +76,14 @@ function NavBar() {
     const theme = useContext(ThemeContext);
     const history = useHistory();
 
+
     const toggleMode = () => {
         setDarkMode(!darkMode);
     }
 
     return (
         <NavBarContainer>
-            <SideBarIcon>
+            <SideBarIcon >
                 <ThreeBarsIcon />
             </SideBarIcon>
             <LinkContainer>

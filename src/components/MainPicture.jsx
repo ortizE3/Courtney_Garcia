@@ -56,12 +56,6 @@ function MainPicture() {
                     <Typography variant='h3'>COURTNEY GARCIA</Typography>
                     <Typography>Content Creator and Model</Typography>
                 </Title>
-
-                <ViewMore>
-                    <a href='#about' >
-                        <DownArrow />
-                    </a>
-                </ViewMore>
             </Image>
         </ImageContainer>
     )

@@ -5,6 +5,7 @@ import Experience from '../components/Experience';
 import ContactMe from '../components/ContactMe';
 import styled from 'styled-components';
 import MainPicture from '../components/MainPicture';
+import Collabs from '../components/Collabs';
 
 const MainContainer = styled.div`
     max-width: 900px;
@@ -19,6 +20,7 @@ function About() {
                 <Hero />
                 <YouTubeFeed />
                 <Experience />
+                <Collabs />
                 <ContactMe />
             </MainContainer>
         </div>
