@@ -1,0 +1,28 @@
+import React from 'react';
+import Typography from './Typography';
+import Line from './Line';
+import styled from 'styled-components';
+import breakpoints from '../breakpoints';
+
+const SectionHeaderContainer = styled.div`
+
+    @media (max-width: ${breakpoints.sm}) {
+        font-size: 12px;
+        padding-right: 0px;
+        margin-right: 0px;
+    }
+`
+
+function SectionHeader(props) {
+    return (
+        <SectionHeaderContainer>
+            <Typography
+                variant='h3'
+                fontColor
+            >{props.title}
+            </Typography>
+        </SectionHeaderContainer>
+    )
+}
+
+export default SectionHeader
