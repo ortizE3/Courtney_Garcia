@@ -53,7 +53,7 @@ function MainPicture() {
         <ImageContainer>
             <Image>
                 <Title>
-                    <Typography variant='h3'>COURTNEY GARCIA</Typography>
+                    <Typography variant='h3'>COURTNEY GARCIA!</Typography>
                     <Typography>Content Creator and Model</Typography>
                 </Title>
 
