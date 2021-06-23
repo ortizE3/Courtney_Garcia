@@ -26,13 +26,6 @@ const Title = styled.div`
     left: 20%;
 `;
 
-const ViewMore = styled.div`
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translate(-50%);
-`;
-
 const DownArrow = styled(BsChevronDown)`
     padding: 20px;
     background-color: #f0f8ff42;

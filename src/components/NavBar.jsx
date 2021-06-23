@@ -25,13 +25,7 @@ const NavBarContainer = styled.div`
     top: 0;
     left: 0;
     right: 0;
-
     z-index: 999;
-
-    @media (max-width: ${breakpoints.sm}) {
-        font-size: 12px;
-        padding: 15px;
-    }
 `;
 
 const SideBarContainer = styled.div`
@@ -40,13 +34,14 @@ const SideBarContainer = styled.div`
     top: 0;
     right: 0;
     left: 0;
-    background-color: white;
+    background-color: ${props => props.backgroundColor};
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    color: black;
-    display: ${props => props.toggleSideBar ? 'flex' : 'none'};
+    color: inherit;
+    transition: transform 1s;
+    transform: ${props => props.toggleSideBar ? 'translateX(0%)' : 'translateX(-100%)'};
 `;
 
 const SideBarIconContainer = styled.div`
@@ -58,14 +53,16 @@ const SideBarIconContainer = styled.div`
 
 const ExitContainer = styled.div`
     position: fixed;
-    top: 25px;
-    left: 15px;
+    top: 20px;
+    left: 10px;
     font-size: 1.75em;
 `
 
 const IconContainer = styled.div`
-        display: flex;
-        align-items: center;
+    display: flex;
+    align-items: center;
+
+
 `;
 
 const LinkContainer = styled.div`
@@ -84,9 +81,15 @@ const NavBarIcon = styled(Icon)`
     }
 `;
 
+const AdaptiveMoonSun = styled(Icon)`
+    @media (max-width: ${breakpoints.sm}) {
+        font-size: 2em;
+    }
+`;
+
 const SideBarIcon = styled(Icon)`
     margin: 0px;
-    font-size: 2em;
+    font-size: 2.5em;
     
     &&& {
         @media (min-width: ${breakpoints.sm}) {
@@ -118,6 +121,7 @@ function NavBar() {
 
             <SideBarContainer
                 toggleSideBar={toggleSideBar}
+                backgroundColor={theme.backgroundColor}
             >
 
                 <ExitContainer onClick={() => {
@@ -134,6 +138,7 @@ function NavBar() {
                     link={true}
                     onClick={() => {
                         history.push("/");
+                        setToggleSideBar(false);
                     }}
                 >
                     ABOUT
@@ -144,6 +149,7 @@ function NavBar() {
                     link={true}
                     onClick={() => {
                         history.push("/shop");
+                        setToggleSideBar(false);
                     }}
                 >
                     SHOP
@@ -156,12 +162,15 @@ function NavBar() {
                         variant='h3'
                         onClick={() => {
                             window.location.replace("https://www.youtube.com/user/garcialynncourt");
+                            setToggleSideBar(false);
                         }}>YOUTUBE</Typography>
 
                     <Typography
                         variant='h3'
                         onClick={() => {
                             window.location.replace("https://www.instagram.com/courtneylynngarcia/");
+                            setToggleSideBar(false);
+
                         }}>INSTAGRAM</Typography>
 
 
@@ -169,9 +178,9 @@ function NavBar() {
                         variant='h3'
                         onClick={() => {
                             window.location.replace("https://www.instagram.com/courtneylynngarcia/");
-                        }}>PINTEREST</Typography>
+                            setToggleSideBar(false);
 
-                    {!darkMode ? <MoonIcon onClick={toggleMode} /> : <SunIcon onClick={toggleMode} />}
+                        }}>PINTEREST</Typography>
                 </SideBarIconContainer>
 
 
@@ -216,9 +225,13 @@ function NavBar() {
                     <PinterestIcon />
                 </NavBarIcon>
 
-                <NavBarIcon>
-                    {!darkMode ? <MoonIcon onClick={toggleMode} /> : <SunIcon onClick={toggleMode} />}
-                </NavBarIcon>
+                <AdaptiveMoonSun>
+                    {!darkMode ?
+                        <MoonIcon onClick={toggleMode} />
+                        :
+                        <SunIcon onClick={toggleMode} />
+                    }
+                </AdaptiveMoonSun>
 
             </IconContainer>
 

@@ -39,10 +39,12 @@ const Video = styled.iframe`
 
     @media (max-width: ${breakpoints.sm}) {
         height: 250px;
+        width: 350px;
     }
 
-    @media (max-width: ${400}) {
-        height: 0px;
+    @media (max-width: 400px) {
+        height: 200px;
+        width: 300px;
     }
 `;
 
@@ -54,7 +56,7 @@ function YouTubeFeed() {
 
     useEffect(() => {
         if (isVisible) {
-            setMoveCounter(moveCounter + 1)
+            setMoveCounter(moveCounter => moveCounter + 1)
         }
     }, [isVisible]);
 
