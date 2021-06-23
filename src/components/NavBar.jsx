@@ -159,7 +159,7 @@ function NavBar() {
                 <SpacedTypography
                     variant='h3'
                     onClick={() => {
-                        window.location.replace("https://www.instagram.com/courtneylynngarcia/");
+                        window.location.replace("https://www.pinterest.com/lovelyloveslove/");
                         setToggleSideBar(false);
 
                     }}>PINTEREST</SpacedTypography>
@@ -201,7 +201,10 @@ function NavBar() {
                 </NavBarIcon>
 
                 <NavBarIcon>
-                    <PinterestIcon />
+                    <PinterestIcon onClick={() => {
+                        window.location.replace("https://www.pinterest.com/lovelyloveslove/");
+                        setToggleSideBar(false);
+                    }} />
                 </NavBarIcon>
 
                 <Icon>
