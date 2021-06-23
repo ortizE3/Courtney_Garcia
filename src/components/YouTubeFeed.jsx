@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import SectionHeader from './SectionHeader';
 import breakpoints from '../breakpoints.js';
@@ -17,7 +17,7 @@ const VideoContainer = styled.div`
     white-space: nowrap;
     padding: 20px 0px 20px 0px;
     transition-duration: 1s;
-    transform: ${props => props.isVisible ? 'translateX(0%)' : 'translateX(100vw)'};
+    transform: ${props => (props.isVisible || props.moveCounter > 0) ? 'translateX(0%)' : 'translateX(100vw)'};
 
     &::-webkit-scrollbar {
         display: none;
@@ -50,6 +50,13 @@ function YouTubeFeed() {
 
     const ref = useRef();
     const isVisible = useOnScreen(ref);
+    const [moveCounter, setMoveCounter] = useState(0);
+
+    useEffect(() => {
+        if (isVisible) {
+            setMoveCounter(moveCounter + 1)
+        }
+    }, [isVisible]);
 
     return (
 
@@ -63,7 +70,7 @@ function YouTubeFeed() {
 
             <VideoContainer
                 isVisible={isVisible}
-
+                moveCounter={moveCounter}
             >
                 <Video frameBorder="0" allowFullScreen width="560" height="315" src="https://www.youtube.com/embed/xh8W8G-ZNLI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></Video>
                 <Video frameBorder="0" allowFullScreen width="560" height="315" src="https://www.youtube.com/embed/xh8W8G-ZNLI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></Video>

@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react';
+import React, { useRef, useContext, useState, useEffect } from 'react';
 import Typography from './Typography';
 import { ToggleContext } from '../ToggleContext';
 import styled from 'styled-components';
@@ -15,7 +15,7 @@ const ImageContainer = styled.div`
 const Image = styled.img`
     width: 100%;
     transition-duration: 1s;
-    transform: ${props => props.isVisible ? 'translateY(0%)' : 'translateY(100vh)'};
+    transform: ${props => (props.isVisible || props.moveCounter > 0) ? 'translateY(0%)' : 'translateY(100vh)'};
 `;
 
 const Details = styled.div`
@@ -26,7 +26,7 @@ const Details = styled.div`
     height: 100%;
     opacity: 0;
     z-index: 999;
-    transform: ${props => props.isVisible ? 'translateY(0%)' : 'translateY(100vh)'};
+    transform: ${props => (props.isVisible || props.moveCounter > 0) ? 'translateY(0%)' : 'translateY(100vh)'};
 
 
     transition-duration: 1s;
@@ -51,6 +51,13 @@ function ImageHighlight(props) {
 
     const ref = useRef();
     const isVisible = useOnScreen(ref);
+    const [moveCounter, setMoveCounter] = useState(0);
+
+    useEffect(() => {
+        if (isVisible) {
+            setMoveCounter(moveCounter + 1)
+        }
+    }, [isVisible])
 
     return (
         <ImageContainer
@@ -60,6 +67,7 @@ function ImageHighlight(props) {
             <Details
                 mode={darkMode}
                 isVisible={isVisible}
+                moveCounter={moveCounter}
             >
                 <StyledDescription>
                     <Typography
@@ -77,6 +85,7 @@ function ImageHighlight(props) {
             </Details>
             <Image
                 isVisible={isVisible}
+                moveCounter={moveCounter}
                 src={props.imgUrl}
                 alt="Grav Magazine" />
 

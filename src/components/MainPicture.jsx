@@ -54,7 +54,7 @@ function MainPicture() {
             <Image>
                 <Title>
                     <Typography variant='h3'>COURTNEY GARCIA</Typography>
-                    <Typography>Content Creator and Model</Typography>
+                    <Typography>CONTENT CREATOR AND MODEL</Typography>
                 </Title>
             </Image>
         </ImageContainer>

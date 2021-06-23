@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
 import { useHistory } from "react-router-dom";
@@ -11,6 +11,7 @@ import { AiOutlineYoutube as YouTubeIcon } from 'react-icons/ai';
 import { BiMoon as MoonIcon } from 'react-icons/bi';
 import { FiSun as SunIcon } from 'react-icons/fi'
 import { VscThreeBars as ThreeBarsIcon } from 'react-icons/vsc'
+import { ImCross as Exit } from 'react-icons/im';
 import breakpoints from '../breakpoints';
 import Icon from './Icon'
 import { ToggleContext } from '../ToggleContext';
@@ -33,10 +34,34 @@ const NavBarContainer = styled.div`
     }
 `;
 
-const HeaderContainer = styled.div`
-        display: flex;
-        align-items: center;
+const SideBarContainer = styled.div`
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: black;
+    display: ${props => props.toggleSideBar ? 'flex' : 'none'};
 `;
+
+const SideBarIconContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`;
+
+const ExitContainer = styled.div`
+    position: fixed;
+    top: 25px;
+    left: 15px;
+    font-size: 1.75em;
+`
 
 const IconContainer = styled.div`
         display: flex;
@@ -61,6 +86,7 @@ const NavBarIcon = styled(Icon)`
 
 const SideBarIcon = styled(Icon)`
     margin: 0px;
+    font-size: 2em;
     
     &&& {
         @media (min-width: ${breakpoints.sm}) {
@@ -75,6 +101,7 @@ function NavBar() {
     const { darkMode, setDarkMode } = useContext(ToggleContext);
     const theme = useContext(ThemeContext);
     const history = useHistory();
+    const [toggleSideBar, setToggleSideBar] = useState(false)
 
 
     const toggleMode = () => {
@@ -84,8 +111,72 @@ function NavBar() {
     return (
         <NavBarContainer>
             <SideBarIcon >
-                <ThreeBarsIcon />
+                <ThreeBarsIcon onClick={() => {
+                    setToggleSideBar(true);
+                }} />
             </SideBarIcon>
+
+            <SideBarContainer
+                toggleSideBar={toggleSideBar}
+            >
+
+                <ExitContainer onClick={() => {
+                    setToggleSideBar(false);
+                }}>
+                    <Icon>
+                        <Exit />
+                    </Icon>
+                </ExitContainer>
+
+                <Typography
+                    variant='h3'
+                    highlight={true}
+                    link={true}
+                    onClick={() => {
+                        history.push("/");
+                    }}
+                >
+                    ABOUT
+                </Typography>
+                <Typography
+                    variant='h3'
+                    highlight={true}
+                    link={true}
+                    onClick={() => {
+                        history.push("/shop");
+                    }}
+                >
+                    SHOP
+                </Typography>
+
+
+
+                <SideBarIconContainer>
+                    <Typography
+                        variant='h3'
+                        onClick={() => {
+                            window.location.replace("https://www.youtube.com/user/garcialynncourt");
+                        }}>YOUTUBE</Typography>
+
+                    <Typography
+                        variant='h3'
+                        onClick={() => {
+                            window.location.replace("https://www.instagram.com/courtneylynngarcia/");
+                        }}>INSTAGRAM</Typography>
+
+
+                    <Typography
+                        variant='h3'
+                        onClick={() => {
+                            window.location.replace("https://www.instagram.com/courtneylynngarcia/");
+                        }}>PINTEREST</Typography>
+
+                    {!darkMode ? <MoonIcon onClick={toggleMode} /> : <SunIcon onClick={toggleMode} />}
+                </SideBarIconContainer>
+
+
+            </SideBarContainer>
+
             <LinkContainer>
                 <Typography
                     margin={'0px 10px 0px 0px'}
@@ -108,10 +199,7 @@ function NavBar() {
                 </Typography>
             </LinkContainer>
 
-
-
             <IconContainer>
-
                 <NavBarIcon >
                     <YouTubeIcon onClick={() => {
                         window.location.replace("https://www.youtube.com/user/garcialynncourt");
@@ -134,7 +222,7 @@ function NavBar() {
 
             </IconContainer>
 
-        </NavBarContainer>
+        </NavBarContainer >
     )
 }
 
