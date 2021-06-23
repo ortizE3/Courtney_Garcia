@@ -38,11 +38,9 @@ const Details = styled.div`
 `;
 
 const StyledDescription = styled(Typography)`
-    &&& {
-        position: absolute;
-        top: 10%;
-        left: 5%;
-    }
+    position: absolute;
+    top: 10%;
+    left: 5%;
 `;
 
 function ImageHighlight(props) {

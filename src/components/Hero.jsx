@@ -30,7 +30,6 @@ const WordSection = styled.div`
     @media (max-width: 760px) {
         width: 100%;
         height: auto;
-        font-size: 12px;
         padding-right: 0px;
         margin-right: 0px;
         margin-top: 20px;
@@ -64,7 +63,7 @@ function Hero() {
     }, [isVisible]);
 
     return (
-        <SectionContainer ref={ref} id='about'>
+        <SectionContainer ref={ref}>
             <WordSection
                 isVisible={isVisible}
                 moveCounter={moveCounter}

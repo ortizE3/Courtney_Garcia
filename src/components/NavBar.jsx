@@ -41,61 +41,47 @@ const SideBarContainer = styled.div`
     text-align: center;
     color: inherit;
     transition: transform 1s;
-    transform: ${props => props.toggleSideBar ? 'translateX(0%)' : 'translateX(-100%)'};
-`;
-
-const SideBarIconContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    transform: ${props => props.toggleSideBar ? 'translateX(0%)' : 'translateX(100%)'};
 `;
 
 const ExitContainer = styled.div`
     position: fixed;
     top: 20px;
-    left: 10px;
-    font-size: 1.75em;
+    right: 20px;
 `
 
 const IconContainer = styled.div`
     display: flex;
     align-items: center;
-
-
 `;
 
 const LinkContainer = styled.div`
     display: flex;
     align-items: center;
+
     @media (max-width: ${breakpoints.sm}) {
         display: none;
     }
 `;
 
+//Hide the navbar icons
 const NavBarIcon = styled(Icon)`
-    &&& {
-        @media (max-width: ${breakpoints.sm}) {
-            display: none;
-        }
-    }
-`;
 
-const AdaptiveMoonSun = styled(Icon)`
     @media (max-width: ${breakpoints.sm}) {
-        font-size: 2em;
+        display: none;
     }
 `;
 
 const SideBarIcon = styled(Icon)`
     margin: 0px;
-    font-size: 2.5em;
     
-    &&& {
-        @media (min-width: ${breakpoints.sm}) {
-            display: none;
-        }
+    @media (min-width: ${breakpoints.sm}) {
+        display: none;
     }
+`;
+
+const SpacedTypography = styled(Typography)`
+    margin-top: 15%;
 `;
 
 
@@ -132,7 +118,7 @@ function NavBar() {
                     </Icon>
                 </ExitContainer>
 
-                <Typography
+                <SpacedTypography
                     variant='h3'
                     highlight={true}
                     link={true}
@@ -142,8 +128,8 @@ function NavBar() {
                     }}
                 >
                     ABOUT
-                </Typography>
-                <Typography
+                </SpacedTypography>
+                <SpacedTypography
                     variant='h3'
                     highlight={true}
                     link={true}
@@ -153,37 +139,30 @@ function NavBar() {
                     }}
                 >
                     SHOP
-                </Typography>
+                </SpacedTypography>
 
+                <SpacedTypography
+                    variant='h3'
+                    onClick={() => {
+                        window.location.replace("https://www.youtube.com/user/garcialynncourt");
+                        setToggleSideBar(false);
+                    }}>YOUTUBE</SpacedTypography>
 
+                <SpacedTypography
+                    variant='h3'
+                    onClick={() => {
+                        window.location.replace("https://www.instagram.com/courtneylynngarcia/");
+                        setToggleSideBar(false);
 
-                <SideBarIconContainer>
-                    <Typography
-                        variant='h3'
-                        onClick={() => {
-                            window.location.replace("https://www.youtube.com/user/garcialynncourt");
-                            setToggleSideBar(false);
-                        }}>YOUTUBE</Typography>
+                    }}>INSTAGRAM</SpacedTypography>
 
-                    <Typography
-                        variant='h3'
-                        onClick={() => {
-                            window.location.replace("https://www.instagram.com/courtneylynngarcia/");
-                            setToggleSideBar(false);
+                <SpacedTypography
+                    variant='h3'
+                    onClick={() => {
+                        window.location.replace("https://www.instagram.com/courtneylynngarcia/");
+                        setToggleSideBar(false);
 
-                        }}>INSTAGRAM</Typography>
-
-
-                    <Typography
-                        variant='h3'
-                        onClick={() => {
-                            window.location.replace("https://www.instagram.com/courtneylynngarcia/");
-                            setToggleSideBar(false);
-
-                        }}>PINTEREST</Typography>
-                </SideBarIconContainer>
-
-
+                    }}>PINTEREST</SpacedTypography>
             </SideBarContainer>
 
             <LinkContainer>
@@ -225,13 +204,13 @@ function NavBar() {
                     <PinterestIcon />
                 </NavBarIcon>
 
-                <AdaptiveMoonSun>
+                <Icon>
                     {!darkMode ?
                         <MoonIcon onClick={toggleMode} />
                         :
                         <SunIcon onClick={toggleMode} />
                     }
-                </AdaptiveMoonSun>
+                </Icon>
 
             </IconContainer>
 

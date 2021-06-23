@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const StyledIcon = styled.div`
     margin-left: 12px;
-    font-size: 1.5em;
+    font-size: 2rem;
     transition-duration: .5s;
     cursor: pointer;
 

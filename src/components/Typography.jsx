@@ -3,25 +3,25 @@ import styled, { ThemeContext } from 'styled-components';
 
 const textType = {
     h3: {
-        fontSize: '2.7em',
-        lineHeight: '1.3em',
+        fontSize: '2.7rem',
+        lineHeight: '3rem',
     },
     h4: {
-        fontSize: '2.125em',
-        lineHeight: '1em',
+        fontSize: '2.125rem',
+        lineHeight: '2rem',
 
     },
     h5: {
-        fontSize: '1.5em',
-        lineHeight: '1em',
+        fontSize: '1.5rem',
+        lineHeight: '2rem',
     },
     h6: {
-        fontSize: '1.25em',
-        lineHeight: '1em',
+        fontSize: '1.25rem',
+        lineHeight: '2rem',
     },
     b1: {
-        fontSize: '1.2em',
-        lineHeight: '1.2em',
+        fontSize: '1.2rem',
+        lineHeight: '2rem',
 
     }
 };

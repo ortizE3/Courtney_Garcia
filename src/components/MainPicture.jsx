@@ -24,22 +24,15 @@ const Title = styled.div`
     position: absolute;
     top: 40%;
     left: 20%;
-`;
 
-const DownArrow = styled(BsChevronDown)`
-    padding: 20px;
-    background-color: #f0f8ff42;
-    border-radius: 100px;
-    color: white;
-    font-size: 1.5em;
-    transition-duration: .5s;
-    cursor: pointer;
-
-    &:hover {
-        transform: scale(1.1);
-        font-size: 1.6em;
+    @media (max-width: 600px) {
+        left: 10%;
     }
-`
+
+    @media (max-width: 450px) {
+        left: 5%;
+    }
+`;
 
 function MainPicture() {
     return (

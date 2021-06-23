@@ -7,7 +7,6 @@ import breakpoints from '../breakpoints';
 const SectionHeaderContainer = styled.div`
 
     @media (max-width: ${breakpoints.sm}) {
-        font-size: 12px;
         padding-right: 0px;
         margin-right: 0px;
     }
