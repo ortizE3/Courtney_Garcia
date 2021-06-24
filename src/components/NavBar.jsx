@@ -149,22 +149,21 @@ function NavBar() {
                     <SpacedTypography
                         variant='h3'
                         onClick={() => {
-                            window.location.replace("https://www.youtube.com/user/garcialynncourt");
+                            window.location.href = "https://www.youtube.com/user/garcialynncourt";
                             setToggleSideBar(false);
                         }}>YOUTUBE</SpacedTypography>
 
                     <SpacedTypography
                         variant='h3'
                         onClick={() => {
-                            window.location.replace("https://www.instagram.com/courtneylynngarcia/");
+                            window.location.href = "https://www.instagram.com/courtneylynngarcia/";
                             setToggleSideBar(false);
-
                         }}>INSTAGRAM</SpacedTypography>
 
                     <SpacedTypography
                         variant='h3'
                         onClick={() => {
-                            window.location.replace("https://www.pinterest.com/lovelyloveslove/");
+                            window.location.href = "https://www.pinterest.com/lovelyloveslove/";
                             setToggleSideBar(false);
                         }}>PINTEREST</SpacedTypography>
                 </SideBarLinkContainer>
@@ -197,19 +196,19 @@ function NavBar() {
             <IconContainer>
                 <NavBarIcon >
                     <YouTubeIcon onClick={() => {
-                        window.location.replace("https://www.youtube.com/user/garcialynncourt");
+                        window.location.href = "https://www.youtube.com/user/garcialynncourt";
                     }} />
                 </NavBarIcon>
 
                 <NavBarIcon >
                     <InstagramIcon onClick={() => {
-                        window.location.replace("https://www.instagram.com/courtneylynngarcia/");
+                        window.location.href = "https://www.instagram.com/courtneylynngarcia/";
                     }} />
                 </NavBarIcon>
 
                 <NavBarIcon>
                     <PinterestIcon onClick={() => {
-                        window.location.replace("https://www.pinterest.com/lovelyloveslove/");
+                        window.location.href = "https://www.pinterest.com/lovelyloveslove/";
                         setToggleSideBar(false);
                     }} />
                 </NavBarIcon>

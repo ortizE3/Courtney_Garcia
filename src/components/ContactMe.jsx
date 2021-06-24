@@ -48,8 +48,16 @@ function ContactMe() {
                 <Typography variant='h4'>CONTACT</Typography>
                 <StyledLine />
 
-                <Typography margin={'20px'} variant='h6' highlight={true} link={true}>garcialynncourt@gmail.com</Typography>
-                <Typography margin={'20px'} variant='h6' highlight={true} link={true}>@courtneylynngarcia</Typography>
+                <Typography margin={'20px'} variant='h6' highlight={true} link={true}
+                    onClick={() => {
+                        window.location.href = "mailto:garcialynncourt@gmail.com";
+                    }}
+                >garcialynncourt@gmail.com</Typography>
+                <Typography margin={'20px'} variant='h6' highlight={true} link={true}
+                    onClick={() => {
+                        window.location.href = "https://www.instagram.com/courtneylynngarcia/";
+                    }}
+                >@courtneylynngarcia</Typography>
                 <Typography margin={'20px'} variant='h6'>Based in Austin, Texas</Typography>
             </ContactContainer>
 

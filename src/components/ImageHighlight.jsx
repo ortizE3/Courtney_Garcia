@@ -15,7 +15,7 @@ const ImageContainer = styled.div`
 const Image = styled.img`
     width: 100%;
     transition-duration: 1s;
-    transform: ${props => (props.isVisible || props.moveCounter > 0) ? 'translateY(0%)' : 'translateY(100vh)'};
+    transform: ${props => (props.isVisible || props.moveCounter > 0) ? 'translateX(0%)' : 'translateX(-100vh)'};
 `;
 
 const Details = styled.div`
@@ -26,7 +26,7 @@ const Details = styled.div`
     height: 100%;
     opacity: 0;
     z-index: 999;
-    transform: ${props => (props.isVisible || props.moveCounter > 0) ? 'translateY(0%)' : 'translateY(100vh)'};
+    transform: ${props => (props.isVisible || props.moveCounter > 0) ? 'translateX(0%)' : 'translateX(-100vh)'};
 
 
     transition-duration: 1s;
