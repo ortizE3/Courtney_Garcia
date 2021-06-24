@@ -6,9 +6,10 @@ import ContactMe from '../components/ContactMe';
 import styled from 'styled-components';
 import MainPicture from '../components/MainPicture';
 import Collabs from '../components/Collabs';
+import Footer from '../components/Footer'
 
 const MainContainer = styled.div`
-    max-width: 900px;
+    max-width: 1100px;
     margin: auto;
 `
 
@@ -23,6 +24,7 @@ function About() {
                 <Collabs />
                 <ContactMe />
             </MainContainer>
+            <Footer />
         </div>
     )
 }

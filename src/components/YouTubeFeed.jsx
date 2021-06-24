@@ -6,9 +6,8 @@ import { useOnScreen } from '../Hooks/hooks'
 
 
 const SectionContainer = styled.div`
-    padding: 0px 20px 0px 20px;
+    margin: 30px 20px 0px 20px;
     overflow-x: hidden;
-    margin-top: 30px;
 
 `;
 

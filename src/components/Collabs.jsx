@@ -4,8 +4,7 @@ import SectionHeader from './SectionHeader';
 import styled from 'styled-components';
 
 const SectionContainer = styled.div`
-    padding: 0px 20px 0px 20px;
-    margin-top: 30px;
+    margin: 30px 20px 0px 20px;
 `
 
 function Collabs() {

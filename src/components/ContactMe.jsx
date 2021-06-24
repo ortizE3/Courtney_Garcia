@@ -11,7 +11,7 @@ const SectionContainer = styled.div`
 
     @media (max-width: ${breakpoints.sm}) {
         flex-direction: column;
-        padding: 40px 20px 40px 20px;
+        padding: 20px 20px 40px 20px;
     }
 `;
 
@@ -20,6 +20,7 @@ const ContactContainer = styled.div`
 
     @media (max-width: ${breakpoints.sm}) {
         width: 100%;
+        margin-top: 20px;
     }
 `;
 

@@ -10,10 +10,8 @@ const SectionContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 20px 0px 20px;
+    margin: 30px 20px 0px 20px;
     overflow-x: hidden;
-    margin-top: 30px;
-
 
     @media (max-width: 760px) {
         flex-direction: column-reverse;
@@ -38,13 +36,12 @@ const WordSection = styled.div`
 
 const Image = styled.img`
     height: 500px;
+    border-radius: 50%;
     transition-duration: 1s;
     transform: ${props => (props.isVisible || props.moveCounter > 0) ? 'translateX(0%)' : 'translateX(100vw)'};
 
     @media (max-width: 760px) {
         height: 400px;
-        padding: 0px -20px 0px -20px;
-
     }
 `;
 

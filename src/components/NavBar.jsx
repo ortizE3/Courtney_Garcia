@@ -35,19 +35,24 @@ const SideBarContainer = styled.div`
     right: 0;
     left: 0;
     background-color: ${props => props.backgroundColor};
+
+    transition: transform 1s;
+    transform: ${props => props.toggleSideBar ? 'translateX(0%)' : 'translateX(100%)'};
+`;
+
+const SideBarLinkContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     color: inherit;
-    transition: transform 1s;
-    transform: ${props => props.toggleSideBar ? 'translateX(0%)' : 'translateX(100%)'};
+    margin-top: 30%;
 `;
 
 const ExitContainer = styled.div`
     position: fixed;
     top: 20px;
-    right: 20px;
+    left: 20px;
 `
 
 const IconContainer = styled.div`
@@ -81,7 +86,8 @@ const SideBarIcon = styled(Icon)`
 `;
 
 const SpacedTypography = styled(Typography)`
-    margin-top: 15%;
+    margin-top: 10%;
+    margin-bottom: ${props => props.marginBottom || 0};
 `;
 
 
@@ -109,7 +115,6 @@ function NavBar() {
                 toggleSideBar={toggleSideBar}
                 backgroundColor={theme.backgroundColor}
             >
-
                 <ExitContainer onClick={() => {
                     setToggleSideBar(false);
                 }}>
@@ -117,57 +122,58 @@ function NavBar() {
                         <Exit />
                     </Icon>
                 </ExitContainer>
+                <SideBarLinkContainer>
+                    <SpacedTypography
+                        variant='h3'
+                        highlight={true}
+                        link={true}
+                        onClick={() => {
+                            history.push("/");
+                            setToggleSideBar(false);
+                        }}
+                    >
+                        ABOUT
+                    </SpacedTypography>
+                    <SpacedTypography
+                        variant='h3'
+                        highlight={true}
+                        link={true}
+                        onClick={() => {
+                            history.push("/shop");
+                            setToggleSideBar(false);
+                        }}
+                    >
+                        SHOP
+                    </SpacedTypography>
 
-                <SpacedTypography
-                    variant='h3'
-                    highlight={true}
-                    link={true}
-                    onClick={() => {
-                        history.push("/");
-                        setToggleSideBar(false);
-                    }}
-                >
-                    ABOUT
-                </SpacedTypography>
-                <SpacedTypography
-                    variant='h3'
-                    highlight={true}
-                    link={true}
-                    onClick={() => {
-                        history.push("/shop");
-                        setToggleSideBar(false);
-                    }}
-                >
-                    SHOP
-                </SpacedTypography>
+                    <SpacedTypography
+                        variant='h3'
+                        onClick={() => {
+                            window.location.replace("https://www.youtube.com/user/garcialynncourt");
+                            setToggleSideBar(false);
+                        }}>YOUTUBE</SpacedTypography>
 
-                <SpacedTypography
-                    variant='h3'
-                    onClick={() => {
-                        window.location.replace("https://www.youtube.com/user/garcialynncourt");
-                        setToggleSideBar(false);
-                    }}>YOUTUBE</SpacedTypography>
+                    <SpacedTypography
+                        variant='h3'
+                        onClick={() => {
+                            window.location.replace("https://www.instagram.com/courtneylynngarcia/");
+                            setToggleSideBar(false);
 
-                <SpacedTypography
-                    variant='h3'
-                    onClick={() => {
-                        window.location.replace("https://www.instagram.com/courtneylynngarcia/");
-                        setToggleSideBar(false);
+                        }}>INSTAGRAM</SpacedTypography>
 
-                    }}>INSTAGRAM</SpacedTypography>
-
-                <SpacedTypography
-                    variant='h3'
-                    onClick={() => {
-                        window.location.replace("https://www.pinterest.com/lovelyloveslove/");
-                        setToggleSideBar(false);
-
-                    }}>PINTEREST</SpacedTypography>
+                    <SpacedTypography
+                        variant='h3'
+                        onClick={() => {
+                            window.location.replace("https://www.pinterest.com/lovelyloveslove/");
+                            setToggleSideBar(false);
+                        }}>PINTEREST</SpacedTypography>
+                </SideBarLinkContainer>
             </SideBarContainer>
 
             <LinkContainer>
                 <Typography
                     margin={'0px 10px 0px 0px'}
+                    fontWeight={'bolder'}
                     highlight={true}
                     link={true}
                     onClick={() => {
@@ -177,6 +183,7 @@ function NavBar() {
                     SHOP
                 </Typography>
                 <Typography
+                    fontWeight={'bolder'}
                     highlight={true}
                     link={true}
                     onClick={() => {

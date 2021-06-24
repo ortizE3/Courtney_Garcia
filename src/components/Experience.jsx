@@ -7,21 +7,23 @@ import Line from './Line';
 import SectionHeader from './SectionHeader';
 
 const ExperienceContainer = styled.div`
-    padding: 0px 20px 0px 20px;
+    margin: 0px 20px 0px 20px;
     margin-top: 30px;
 `;
 
 function Experience() {
 
     return (
-        <ExperienceContainer>
-            <SectionHeader title='MODELING' />
+        <div>
+            <ExperienceContainer>
+                <SectionHeader title='MODELING' />
+            </ExperienceContainer>
             <ImageHighlight
                 imgUrl={GravMagazine}
                 header={'GRAV'}
                 description={'2021 Spring Catalog Photoshoot'}
             />
-        </ExperienceContainer>
+        </div>
     )
 }
 

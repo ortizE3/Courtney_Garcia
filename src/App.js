@@ -12,7 +12,7 @@ import Shop from './pages/Shop.jsx';
 
 const commonAttr = {
   fontFamily: 'quasimoda, sans-serif',
-  fontWeight: 'bolder',
+  fontWeight: '300',
   fontStyle: 'normal',
   fontSize: 16,
 }
@@ -51,6 +51,7 @@ const GlobalStyle = createGlobalStyle`
     height: 100vh;
     transition-duration: .75s;
     font-family: ${props => props.fontFamily};
+    font-weight: ${props => props.fontWeight};
     color: ${props => props.fontColor};
     background-color: ${props => props.backgroundColor};
   }
@@ -107,6 +108,7 @@ function App() {
               fontColor={theme.fontColor}
               backgroundColor={theme.backgroundColor}
               fontSize={theme.fontSize}
+              fontWeight={theme.fontWeight}
             />
             <Switch>
               <Route path='/' exact component={About} />

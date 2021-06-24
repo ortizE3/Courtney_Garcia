@@ -23,6 +23,10 @@ const textType = {
         fontSize: '1.2rem',
         lineHeight: '2rem',
 
+    },
+    b2: {
+        fontSize: '.8rem',
+        lineHeight: '2rem',
     }
 };
 
@@ -33,6 +37,7 @@ const StyledTypography = styled.div`
     transition-duration: .5s;
     font-size: ${props => textType[props.variant || 'b1'].fontSize};
     line-height: ${props => textType[props.variant || 'b1'].lineHeight};
+    font-weight: ${props => props.fontWeight || 'inherit'};
 
     &:hover {
         text-decoration: ${props => props.highlight && 'underline'};
