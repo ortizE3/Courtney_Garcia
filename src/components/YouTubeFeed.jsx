@@ -1,14 +1,13 @@
-import React, { useRef, useEffect, useState } from 'react';
-import styled from 'styled-components';
+import React, { useRef, useEffect, useState, useContext } from 'react';
+import styled, { ThemeContext } from 'styled-components';
 import SectionHeader from './SectionHeader';
 import breakpoints from '../breakpoints.js';
 import { useOnScreen } from '../Hooks/hooks'
+import { ToggleContext } from '../ToggleContext';
 
 
 const SectionContainer = styled.div`
     margin: 30px 20px 0px 20px;
-    overflow-x: hidden;
-
 `;
 
 const VideoContainer = styled.div`
@@ -19,10 +18,13 @@ const VideoContainer = styled.div`
     transform: ${props => (props.isVisible || props.moveCounter > 0) ? 'translateX(0%)' : 'translateX(100vw)'};
 
     &::-webkit-scrollbar {
-        display: none;
+        height: 7px;         
     }
 
-    -ms-overflow-style: none;
+    &::-webkit-scrollbar-thumb {
+        background-color: ${props => props.theme.fontColor};
+        border-radius: 5px;       
+    }
 `;
 
 const Video = styled.iframe`
@@ -52,6 +54,10 @@ function YouTubeFeed() {
     const ref = useRef();
     const isVisible = useOnScreen(ref);
     const [moveCounter, setMoveCounter] = useState(0);
+    const { darkMode } = useContext(ToggleContext);
+    const theme = useContext(ThemeContext);
+
+
 
     useEffect(() => {
         if (isVisible) {
@@ -72,6 +78,8 @@ function YouTubeFeed() {
             <VideoContainer
                 isVisible={isVisible}
                 moveCounter={moveCounter}
+                mode={darkMode}
+                theme={theme}
             >
                 <Video frameBorder="0" allowFullScreen width="560" height="315" src="https://www.youtube.com/embed/xh8W8G-ZNLI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></Video>
                 <Video frameBorder="0" allowFullScreen width="560" height="315" src="https://www.youtube.com/embed/xh8W8G-ZNLI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></Video>
