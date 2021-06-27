@@ -11,10 +11,11 @@ const FooterContainer = styled.div`
     background-color: ${props => props.mode ? '#3b3b3b' : 'black'};
 `;
 
-const EmailContainer = styled.span`
+const EmailContainer = styled(Typography)`
     text-transform: lowercase;
     font-size: 1.1rem;
     cursor: pointer;
+    display: inline-block;
 `;
 
 const SpaceTypography = styled(Typography)`
@@ -31,7 +32,7 @@ function Footer() {
         >
             <Typography variant='b2'>Thank you for visiting</Typography>
             <SpaceTypography variant='b2'>Developed by Ethan Ortiz</SpaceTypography>
-            <SpaceTypography variant='b2'>For business inquiry contact <EmailContainer
+            <SpaceTypography variant='b2'>For business inquiries <EmailContainer
                 onClick={() => {
                     window.location.href = "mailto:ortizethan3@gmail.com";
                 }}

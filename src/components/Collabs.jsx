@@ -11,10 +11,11 @@ function Collabs() {
     return (
         <SectionContainer>
             <SectionHeader title='COLLABS' />
-            <Typography margin={'20px'} variant='h6'>BARE FOOT</Typography>
+            <Typography margin={'20px'} variant='h6'>BAREFOOT SCIENTIST</Typography>
             <Typography margin={'20px'} variant='h6'>TROPHY SKIN</Typography>
             <Typography margin={'20px'} variant='h6'>HYLETE</Typography>
-            <Typography margin={'20px'} variant='h6'>GENIUS GOURNMET</Typography>
+            <Typography margin={'20px'} variant='h6'>MERMADE HAIR</Typography>
+            <Typography margin={'20px'} variant='h6'>LUNYA</Typography>
 
         </SectionContainer>
     )

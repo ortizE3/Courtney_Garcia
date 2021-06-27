@@ -11,6 +11,7 @@ import Footer from '../components/Footer'
 const MainContainer = styled.div`
     max-width: 1100px;
     margin: auto;
+    overflow-x: hidden;
 `
 
 function About() {

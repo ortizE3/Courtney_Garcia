@@ -25,7 +25,7 @@ const ContactContainer = styled.div`
 `;
 
 const StyledLine = styled(Line)`
-    width: 95%;
+    width: 90%;
     margin-left:0;
 `;
 

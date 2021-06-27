@@ -23,7 +23,6 @@ const VideoContainer = styled.div`
 
     &::-webkit-scrollbar-thumb {
         background-color: ${props => props.theme.fontColor};
-        border-radius: 5px;       
     }
 `;
 
@@ -31,7 +30,6 @@ const Video = styled.iframe`
     display: inline-block;
     transition-duration: .5s;
     margin-right: 10px;
-    border-radius: 20px;
     transition-duration: 1s;
 
     &:hover {
@@ -82,8 +80,8 @@ function YouTubeFeed() {
                 theme={theme}
             >
                 <Video frameBorder="0" allowFullScreen width="560" height="315" src="https://www.youtube.com/embed/xh8W8G-ZNLI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></Video>
-                <Video frameBorder="0" allowFullScreen width="560" height="315" src="https://www.youtube.com/embed/xh8W8G-ZNLI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></Video>
-                <Video frameBorder="0" allowFullScreen width="560" height="315" src="https://www.youtube.com/embed/xh8W8G-ZNLI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></Video>
+                <Video frameBorder="0" allowFullScreen width="560" height="315" src="https://www.youtube.com/embed/esQZ5V-wDjY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></Video>
+                <Video frameBorder="0" allowFullScreen width="560" height="315" src="https://www.youtube.com/embed/w0yvZhLjU4I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></Video>
             </VideoContainer>
 
         </SectionContainer>
