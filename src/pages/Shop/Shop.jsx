@@ -35,7 +35,7 @@ const LinkContainer = styled.div`
     align-content: center;
     padding: 0px 20px 0px 20px;
 
-    @media (max-width: 800px) {
+    @media (max-width: 1000px) {
         width: 100vw;
     }
 
@@ -69,6 +69,12 @@ const LineImage = styled.img`
     margin-right: 1rem;
 `;
 
+const LinkSubContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+`;
+
 function Shop() {
     const theme = useContext(ThemeContext);
     const { darkMode } = useContext(ToggleContext);
@@ -88,13 +94,22 @@ function Shop() {
 
                 <IndentedText>
                     <Typography variant='h2'>STOREFRONT</Typography>
-
-                    {links.map((link) =>
-                        <React.Fragment>
-                            <SpacedTypography highlight={true} link={true} variant='h4'>{link.name} </SpacedTypography>
-                            {link.name !== 'BOOKS' && <LineImage src={darkMode ? VerticalWhiteLine : VerticalLine} alt='Black Vertical Line' />}
-                        </React.Fragment>
-                    )}
+                    <LinkSubContainer>
+                        {links.map((link) =>
+                            <React.Fragment>
+                                <SpacedTypography
+                                    highlight={true}
+                                    link={true}
+                                    variant='h4'
+                                    onClick={() => {
+                                        window.location.href = link.url;
+                                    }}
+                                >{link.name}
+                                </SpacedTypography>
+                                {link.name !== 'BOOKS' && <LineImage src={darkMode ? VerticalWhiteLine : VerticalLine} alt='Black Vertical Line' />}
+                            </React.Fragment>
+                        )}
+                    </LinkSubContainer>
                 </IndentedText>
             </LinkContainer>
         </ShopContainer>
