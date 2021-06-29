@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Typography from './Typography';
 import GravMagazine from '../images/GravMagazine.png';
 import ImageHighlight from './ImageHighlight';
-import Line from './Line';
 import SectionHeader from './SectionHeader';
 
 const ExperienceContainer = styled.div`

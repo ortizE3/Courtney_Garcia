@@ -16,7 +16,7 @@ const MainContainer = styled.div`
 
 function About() {
     return (
-        <div>
+        <React.Fragment>
             <MainPicture />
             <MainContainer>
                 <Hero />
@@ -25,8 +25,7 @@ function About() {
                 <Collabs />
                 <ContactMe />
             </MainContainer>
-            <Footer />
-        </div>
+        </React.Fragment>
     )
 }
 

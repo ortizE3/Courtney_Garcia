@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export function useOnScreen(ref) {
 
@@ -12,7 +12,7 @@ export function useOnScreen(ref) {
         observer.observe(ref.current)
 
         return () => { observer.disconnect() }
-    }, [])
+    }, [ref])
 
     return isIntersecting
 }

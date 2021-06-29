@@ -7,8 +7,9 @@ import styled from 'styled-components';
 
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
-import { BrowserRouter, Route, Switch, useLocation } from 'react-router-dom';
-import Shop from './pages/Shop.jsx';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Shop from './pages/Shop/Shop.jsx';
+import Footer from './components/Footer'
 
 const commonAttr = {
   fontFamily: 'quasimoda, sans-serif',
@@ -116,6 +117,7 @@ function App() {
               <Route path='/' render={() => <div>404</div>} />
             </Switch>
           </GlobalContainer>
+          <Footer />
         </BrowserRouter>
       </ThemeProvider>
     </ToggleContext.Provider>

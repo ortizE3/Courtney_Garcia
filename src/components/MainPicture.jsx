@@ -2,7 +2,6 @@ import React from 'react';
 import HeroImg from '../images/Hero.jpg'
 import styled from 'styled-components';
 import Typography from './Typography';
-import { BsChevronDown } from 'react-icons/bs'
 
 const Image = styled.div`
     background-image: url(${HeroImg});

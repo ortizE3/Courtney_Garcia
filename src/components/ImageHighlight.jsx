@@ -33,7 +33,7 @@ const Details = styled.div`
 
     &:hover {
         opacity: 7;
-        background-color: ${props => !props.mode ? '#f1efe985' : '#2222227e'};
+        background-color: ${props => props.mode === 'false' ? '#f1efe985' : '#2222227e'};
     }
 `;
 
@@ -53,7 +53,7 @@ function ImageHighlight(props) {
 
     useEffect(() => {
         if (isVisible) {
-            setMoveCounter(moveCounter + 1)
+            setMoveCounter(moveCounter => moveCounter + 1)
         }
     }, [isVisible])
 

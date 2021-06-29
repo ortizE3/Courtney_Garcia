@@ -1,6 +1,5 @@
 import React from 'react';
 import Typography from './Typography';
-import Line from './Line';
 import styled from 'styled-components';
 import breakpoints from '../breakpoints';
 

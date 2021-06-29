@@ -55,7 +55,7 @@ function Hero() {
 
     useEffect(() => {
         if (isVisible) {
-            setMoveCounter(moveCounter + 1)
+            setMoveCounter(moveCounter => moveCounter + 1)
         }
     }, [isVisible]);
 

@@ -8,7 +8,7 @@ const FooterContainer = styled.div`
     text-align: left;
     text-transform: uppercase;
     color: white;
-    background-color: ${props => props.mode ? '#3b3b3b' : 'black'};
+    background-color: ${props => props.mode === 'true' ? '#3b3b3b' : 'black'};
 `;
 
 const EmailContainer = styled(Typography)`

@@ -2,6 +2,10 @@ import React, { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
 const textType = {
+    h2: {
+        fontSize: '3.2rem',
+        lineHeight: '3rem',
+    },
     h3: {
         fontSize: '2.7rem',
         lineHeight: '3rem',
