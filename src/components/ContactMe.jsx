@@ -7,7 +7,9 @@ import Typography from './Typography';
 
 const SectionContainer = styled.div`
     display: flex;
-    padding: 40px 20px 80px 20px;
+    background-color: #a5bdaba8;
+    backdrop-filter: blur(3px);
+    padding: 20px;
 
     @media (max-width: ${breakpoints.sm}) {
         flex-direction: column;

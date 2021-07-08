@@ -8,13 +8,12 @@ const Image = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    overflow-x: hidden;
     background-position: 50% 50%;
     position: relative;
+    overflow-x: hidden;
 `
 
 const ImageContainer = styled.div`
-    overflow-x: hidden;
     max-width: none;
     color: white;
 `;

@@ -7,6 +7,7 @@ import SectionHeader from './SectionHeader';
 const ExperienceContainer = styled.div`
     margin: 0px 20px 0px 20px;
     margin-top: 30px;
+    overflow-x: hidden;
 `;
 
 function Experience() {

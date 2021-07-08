@@ -16,7 +16,7 @@ const ShopContainer = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    overflow-x: hidden;
+
     align-items: center;
     justify-content: center;
 `;

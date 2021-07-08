@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import breakpoints from '../breakpoints';
 
 const SectionHeaderContainer = styled.div`
+    overflow-y: hidden;
 
     @media (max-width: ${breakpoints.sm}) {
         padding-right: 0px;

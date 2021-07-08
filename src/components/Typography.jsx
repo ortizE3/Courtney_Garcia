@@ -35,6 +35,7 @@ const textType = {
 };
 
 const StyledTypography = styled.div`
+    word-wrap: break-word;
     margin: ${props => props.margin || '0px'};
     color: inherit;
     cursor: ${props => props.link && 'pointer'};
