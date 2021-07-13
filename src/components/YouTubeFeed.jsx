@@ -8,6 +8,7 @@ import { ToggleContext } from '../ToggleContext';
 
 const SectionContainer = styled.div`
     margin: 30px 20px 0px 20px;
+    overflow-x: hidden;
 `;
 
 const VideoContainer = styled.div`

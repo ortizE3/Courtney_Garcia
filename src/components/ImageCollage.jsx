@@ -17,10 +17,10 @@ const Image = styled.img`
     padding-right: ${props => props.paddingRight || 0};
 
     @media (max-width: 400px) {
-        width: 100%;
+        width: auto;
         height: auto;
         padding: 0px;
-        margin: 0px;
+        margin: 10px 0px;
     }
 `
 
