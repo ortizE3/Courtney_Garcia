@@ -2,55 +2,44 @@ import React, { useContext } from 'react';
 import Typography from '../../components/Typography';
 import styled, { ThemeContext } from 'styled-components';
 import { ToggleContext } from '../../ToggleContext';
-import Gray from '../../images/Gray.png'
-import CG from '../../images/cg.svg'
-import CGWhite from '../../images/cg-white.svg';
+import shopImage from '../../images/col6.jpg'
 import VerticalLine from '../../images/line.svg';
 import VerticalWhiteLine from '../../images/line-white.svg';
 import { links } from './Links';
-import Footer from '../../components/Footer';
 
-const ShopContainer = styled.div`
+const Image = styled.div`
+    width: 100%;
     display: flex;
-    background-image: url(${Gray});
+    align-items: center;
+    justify-content: center;
+    background-image: url(${shopImage});
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-
-    align-items: center;
-    justify-content: center;
+    background-position: 50% 50%;
+    position: relative;
 `;
 
-const Image = styled.img`
-    width: 100%;
-`;
 
 const LinkContainer = styled.div`
+    box-shadow: ${props => props.darkMode ? '0px 0px 15px 5px #484c4d' : '0px 0px 15px 5px #a5aaac'};
+    background-color: ${props => props.darkMode ? '#4b504ca8' : '#dfe7e1a8'};
+
+
+    padding: 20px;
     font-weight: bolder;
     display: flex;
-    background-color: ${props => props.backgroundColor};
-    height: 100vh;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    padding: 0px 20px 0px 20px;
 
     @media (max-width: 1000px) {
         width: 100vw;
     }
-
-`;
-
-const ImageContainer = styled.div`
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-basis: 30%;
-
-    @media (max-width: 800px) {
-        display: none;
+    @media (max-width: 330px) {
+        padding: 10px;
     }
+
 `;
 
 const SpacedTypography = styled(Typography)`
@@ -80,15 +69,9 @@ function Shop() {
     const { darkMode } = useContext(ToggleContext);
 
     return (
-        <ShopContainer>
-
-            <ImageContainer>
-                <Image src={darkMode ? CGWhite : CG} alt='courtney garcia logo' />
-            </ImageContainer>
-
-
+        <Image>
             <LinkContainer
-                backgroundColor={theme.backgroundColor}
+                darkMode={darkMode}
             >
                 <Typography variant='h2'>AMAZON</Typography>
 
@@ -112,7 +95,7 @@ function Shop() {
                     </LinkSubContainer>
                 </IndentedText>
             </LinkContainer>
-        </ShopContainer>
+        </Image>
     )
 }
 

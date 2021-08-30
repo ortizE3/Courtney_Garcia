@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import beach1 from '../images/beach1.JPG';
-import beach2 from '../images/beach2.JPG';
-import beach3 from '../images/beach3.JPG';
-import cement1 from '../images/cement1.JPG';
-import cement2 from '../images/cement2.JPG';
-import black from '../images/black.JPG'
+import col1 from '../images/col1.jpg';
+import col2 from '../images/col2.jpg';
+import col3 from '../images/col3.jpg';
+import col4 from '../images/col4.jpg';
+import col5 from '../images/col5.jpg';
+import col6 from '../images/col6.jpg';
 
 const Image = styled.img`
     max-height: 300px;
@@ -16,8 +16,8 @@ const Image = styled.img`
     padding-left: ${props => props.paddingLeft || 0};
     padding-right: ${props => props.paddingRight || 0};
 
-    @media (max-width: 400px) {
-        width: auto;
+    @media (max-width: 460px) {
+        width: ${props => props.horizontal ? '100%' : 'auto'};;
         height: auto;
         padding: 0px;
         margin: 10px 0px;
@@ -35,36 +35,39 @@ function ImageCollage() {
     return (
         <ImageContainer>
             <Image
-                src={beach1}
+                src={col1}
                 alignSelf={'start'}
             />
 
             <Image
-                src={cement1}
+                src={col2}
                 alignSelf={'center'}
+                horizontal={true}
             />
 
             <Image
-                src={black}
+                src={col3}
                 alignSelf={'start'}
                 paddingLeft={'calc(.2 * 100vw)'}
             />
 
             <Image
-                src={beach2}
+                src={col4}
                 alignSelf={'flex-end'}
                 paddingRight={'calc(.1 * 100vw)'}
             />
 
             <Image
-                src={cement2}
+                src={col5}
                 alignSelf={'start'}
                 paddingLeft={'calc(.1 * 100vw)'}
             />
 
             <Image
-                src={beach3}
+                src={col6}
                 alignSelf={'center'}
+                horizontal={true}
+
             />
         </ImageContainer>
     )

@@ -1,5 +1,5 @@
 import React from 'react';
-import HeroImg from '../images/Hero.jpg'
+import HeroImg from '../images/front2.jpg'
 import styled from 'styled-components';
 import Typography from './Typography';
 
@@ -8,7 +8,7 @@ const Image = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    background-position: 50% 50%;
+    background-position: 25% 50%;
     position: relative;
     overflow-x: hidden;
 `

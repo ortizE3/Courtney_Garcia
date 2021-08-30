@@ -75,12 +75,7 @@ const GlobalStyle = createGlobalStyle`
   }
   `;
 
-const GlobalContainer = styled.div`
 
-  @media (max-width: 760px) {
-    top: 50px;
-  }
-`;
 
 function App() {
 
@@ -103,7 +98,7 @@ function App() {
 
         <BrowserRouter>
           <NavBar />
-          <GlobalContainer>
+          <div>
             <GlobalStyle
               fontFamily={theme.fontFamily}
               fontColor={theme.fontColor}
@@ -116,7 +111,7 @@ function App() {
               <Route path='/shop' exact component={Shop} />
               <Route path='/' render={() => <div>404</div>} />
             </Switch>
-          </GlobalContainer>
+          </div>
           <Footer />
         </BrowserRouter>
       </ThemeProvider>

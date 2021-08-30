@@ -9,7 +9,7 @@ import Collabs from '../components/Collabs';
 import Typography from '../components/Typography';
 
 const MainContainer = styled.div`
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
 `
 

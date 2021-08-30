@@ -45,7 +45,6 @@ const SideBarLinkContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    color: inherit;
     margin-top: 30%;
 `;
 
@@ -58,11 +57,13 @@ const ExitContainer = styled.div`
 const IconContainer = styled.div`
     display: flex;
     align-items: center;
+    color: white;
 `;
 
 const LinkContainer = styled.div`
     display: flex;
     align-items: center;
+    color: white;
 
     @media (max-width: ${breakpoints.sm}) {
         display: none;
@@ -71,7 +72,6 @@ const LinkContainer = styled.div`
 
 //Hide the navbar icons
 const NavBarIcon = styled(Icon)`
-
     @media (max-width: ${breakpoints.sm}) {
         display: none;
     }
@@ -79,7 +79,8 @@ const NavBarIcon = styled(Icon)`
 
 const SideBarIcon = styled(Icon)`
     margin: 0px;
-    
+    color: white;
+
     @media (min-width: ${breakpoints.sm}) {
         display: none;
     }

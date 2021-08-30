@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styled from 'styled-components';
-import Courtney from '../images/courtney.png';
-import CourtneySecond from '../images/courtneySecond.png';
+import Courtney from '../images/about1.jpg';
+import CourtneySecond from '../images/about2.jpg';
 import { useOnScreen } from '../Hooks/hooks'
 import SectionHeader from './SectionHeader';
 import Typography from './Typography';
@@ -36,7 +36,6 @@ const WordSection = styled.div`
 
 const Image = styled.img`
     height: 500px;
-    border-radius: 50%;
     transition-duration: 1s;
     transform: ${props => (props.isVisible || props.moveCounter > 0) ? 'translateX(0%)' : 'translateX(100vw)'};
 
