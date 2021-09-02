@@ -1,5 +1,5 @@
 import React from 'react'
-import Hero from '../components/Hero';
+import Bio from '../components/Bio';
 import YouTubeFeed from '../components/YouTubeFeed';
 import Experience from '../components/Experience';
 import ContactMe from '../components/ContactMe';
@@ -41,7 +41,7 @@ function About() {
         <React.Fragment>
             <MainPicture />
             <MainContainer>
-                <Hero />
+                <Bio />
                 <YouTubeFeed />
                 <Experience />
 

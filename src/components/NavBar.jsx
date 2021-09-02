@@ -1,24 +1,16 @@
-import React, { useContext, useState } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
 import { useHistory } from "react-router-dom";
 
 import Typography from './Typography';
 
-import { ImPinterest2 as PinterestIcon } from 'react-icons/im';
-import { CgInstagram as InstagramIcon } from 'react-icons/cg';
-import { AiOutlineYoutube as YouTubeIcon } from 'react-icons/ai';
-import { BiMoon as MoonIcon } from 'react-icons/bi';
-import { FiSun as SunIcon } from 'react-icons/fi'
 import { VscThreeBars as ThreeBarsIcon } from 'react-icons/vsc'
 import { ImCross as Exit } from 'react-icons/im';
 import breakpoints from '../breakpoints';
 import Icon from './Icon'
-import { ToggleContext } from '../ToggleContext';
 
 const NavBarContainer = styled.div`
-    display: flex;
-    justify-content: space-between;
     padding: 20px;
     transition-duration: .5s;
     position: absolute;
@@ -34,18 +26,18 @@ const SideBarContainer = styled.div`
     top: 0;
     right: 0;
     left: 0;
-    background-color: ${props => props.backgroundColor};
-
-    transition: transform 1s;
+    background-color: #ffffffac;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    transition: transform .5s;
     transform: ${props => props.toggleSideBar ? 'translateX(0%)' : 'translateX(100%)'};
 `;
 
 const SideBarLinkContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     text-align: center;
-    margin-top: 30%;
 `;
 
 const ExitContainer = styled.div`
@@ -54,24 +46,11 @@ const ExitContainer = styled.div`
     left: 20px;
 `
 
-const IconContainer = styled.div`
-    display: flex;
-    align-items: center;
-    color: white;
-`;
-
 const LinkContainer = styled.div`
     display: flex;
     align-items: center;
     color: white;
 
-    @media (max-width: ${breakpoints.sm}) {
-        display: none;
-    }
-`;
-
-//Hide the navbar icons
-const NavBarIcon = styled(Icon)`
     @media (max-width: ${breakpoints.sm}) {
         display: none;
     }
@@ -94,15 +73,8 @@ const SpacedTypography = styled(Typography)`
 
 function NavBar() {
 
-    const { darkMode, setDarkMode } = useContext(ToggleContext);
-    const theme = useContext(ThemeContext);
     const history = useHistory();
     const [toggleSideBar, setToggleSideBar] = useState(false)
-
-
-    const toggleMode = () => {
-        setDarkMode(!darkMode);
-    }
 
     return (
         <NavBarContainer>
@@ -114,7 +86,6 @@ function NavBar() {
 
             <SideBarContainer
                 toggleSideBar={toggleSideBar}
-                backgroundColor={theme.backgroundColor}
             >
                 <ExitContainer onClick={() => {
                     setToggleSideBar(false);
@@ -123,51 +94,53 @@ function NavBar() {
                         <Exit />
                     </Icon>
                 </ExitContainer>
-                <SideBarLinkContainer>
-                    <SpacedTypography
-                        variant='h3'
-                        highlight={true}
-                        link={true}
-                        onClick={() => {
-                            history.push("/");
-                            setToggleSideBar(false);
-                        }}
-                    >
-                        ABOUT
-                    </SpacedTypography>
-                    <SpacedTypography
-                        variant='h3'
-                        highlight={true}
-                        link={true}
-                        onClick={() => {
-                            history.push("/shop");
-                            setToggleSideBar(false);
-                        }}
-                    >
-                        SHOP
-                    </SpacedTypography>
+                <div>
+                    <SideBarLinkContainer>
+                        <SpacedTypography
+                            variant='h3'
+                            highlight={true}
+                            link={true}
+                            onClick={() => {
+                                history.push("/");
+                                setToggleSideBar(false);
+                            }}
+                        >
+                            ABOUT
+                        </SpacedTypography>
+                        <SpacedTypography
+                            variant='h3'
+                            highlight={true}
+                            link={true}
+                            onClick={() => {
+                                history.push("/shop");
+                                setToggleSideBar(false);
+                            }}
+                        >
+                            SHOP
+                        </SpacedTypography>
 
-                    <SpacedTypography
-                        variant='h3'
-                        onClick={() => {
-                            window.location.href = "https://www.youtube.com/user/garcialynncourt";
-                            setToggleSideBar(false);
-                        }}>YOUTUBE</SpacedTypography>
+                        <SpacedTypography
+                            variant='h3'
+                            onClick={() => {
+                                window.location.href = "https://www.youtube.com/user/garcialynncourt";
+                                setToggleSideBar(false);
+                            }}>YOUTUBE</SpacedTypography>
 
-                    <SpacedTypography
-                        variant='h3'
-                        onClick={() => {
-                            window.location.href = "https://www.instagram.com/courtneylynngarcia/";
-                            setToggleSideBar(false);
-                        }}>INSTAGRAM</SpacedTypography>
+                        <SpacedTypography
+                            variant='h3'
+                            onClick={() => {
+                                window.location.href = "https://www.instagram.com/courtneylynngarcia/";
+                                setToggleSideBar(false);
+                            }}>INSTAGRAM</SpacedTypography>
 
-                    <SpacedTypography
-                        variant='h3'
-                        onClick={() => {
-                            window.location.href = "https://www.pinterest.com/lovelyloveslove/";
-                            setToggleSideBar(false);
-                        }}>PINTEREST</SpacedTypography>
-                </SideBarLinkContainer>
+                        <SpacedTypography
+                            variant='h3'
+                            onClick={() => {
+                                window.location.href = "https://www.pinterest.com/lovelyloveslove/";
+                                setToggleSideBar(false);
+                            }}>PINTEREST</SpacedTypography>
+                    </SideBarLinkContainer>
+                </div>
             </SideBarContainer>
 
             <LinkContainer>
@@ -193,36 +166,6 @@ function NavBar() {
                     ABOUT
                 </Typography>
             </LinkContainer>
-
-            <IconContainer>
-                <NavBarIcon >
-                    <YouTubeIcon onClick={() => {
-                        window.location.href = "https://www.youtube.com/user/garcialynncourt";
-                    }} />
-                </NavBarIcon>
-
-                <NavBarIcon >
-                    <InstagramIcon onClick={() => {
-                        window.location.href = "https://www.instagram.com/courtneylynngarcia/";
-                    }} />
-                </NavBarIcon>
-
-                <NavBarIcon>
-                    <PinterestIcon onClick={() => {
-                        window.location.href = "https://www.pinterest.com/lovelyloveslove/";
-                        setToggleSideBar(false);
-                    }} />
-                </NavBarIcon>
-
-                <Icon>
-                    {!darkMode ?
-                        <MoonIcon onClick={toggleMode} />
-                        :
-                        <SunIcon onClick={toggleMode} />
-                    }
-                </Icon>
-
-            </IconContainer>
 
         </NavBarContainer >
     )

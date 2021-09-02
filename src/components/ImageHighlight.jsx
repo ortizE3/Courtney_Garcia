@@ -1,6 +1,5 @@
 import React, { useRef, useContext, useState, useEffect } from 'react';
 import Typography from './Typography';
-import { ToggleContext } from '../ToggleContext';
 import styled from 'styled-components';
 import { useOnScreen } from '../Hooks/hooks'
 
@@ -9,7 +8,7 @@ const ImageContainer = styled.div`
     margin-top: 20px;
     position: relative;
     display: flex;
-    color:  ${props => props.mode ? 'white' : 'black'};
+    color: 'black';
 `;
 
 const Image = styled.img`
@@ -33,7 +32,7 @@ const Details = styled.div`
 
     &:hover {
         opacity: 7;
-        background-color: ${props => props.mode === 'false' ? '#f1efe985' : '#2222227e'};
+        background-color: #b5acac63;
     }
 `;
 
@@ -44,8 +43,6 @@ const StyledDescription = styled(Typography)`
 `;
 
 function ImageHighlight(props) {
-
-    const { darkMode } = useContext(ToggleContext);
 
     const ref = useRef();
     const isVisible = useOnScreen(ref);
@@ -59,11 +56,9 @@ function ImageHighlight(props) {
 
     return (
         <ImageContainer
-            mode={darkMode}
             ref={ref}
         >
             <Details
-                mode={darkMode}
                 isVisible={isVisible}
                 moveCounter={moveCounter}
             >

@@ -46,7 +46,7 @@ const Image = styled.img`
 
 
 
-function Hero() {
+function Bio() {
 
     const ref = useRef();
     const isVisible = useOnScreen(ref);
@@ -81,4 +81,4 @@ function Hero() {
     )
 }
 
-export default Hero
+export default Bio

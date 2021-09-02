@@ -18,27 +18,14 @@ const commonAttr = {
   fontSize: 16,
 }
 
-const lightTheme = {
+const theme = {
   ...commonAttr,
-  //light beige
   backgroundColor: 'white',
-  //dark beige
   fontColor: 'black',
 
-  //grey
   secondary: '#5e5e5e',
 }
 
-const darkTheme = {
-  ...commonAttr,
-  //dark gray
-  backgroundColor: 'black',
-  //gray
-  fontColor: 'white',
-
-  //grey
-  secondary: '#5e5e5e',
-}
 
 const GlobalStyle = createGlobalStyle`
 
@@ -79,43 +66,31 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
 
-  const [darkMode, setDarkMode] = useState(false);
-  const [theme, setTheme] = useState(lightTheme);
 
-  useEffect(() => {
 
-    if (darkMode) {
-      setTheme(darkTheme)
-    } else {
-      setTheme(lightTheme)
-    }
-
-  }, [darkMode])
 
   return (
-    <ToggleContext.Provider value={{ darkMode, setDarkMode }}>
-      <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
 
-        <BrowserRouter>
-          <NavBar />
-          <div>
-            <GlobalStyle
-              fontFamily={theme.fontFamily}
-              fontColor={theme.fontColor}
-              backgroundColor={theme.backgroundColor}
-              fontSize={theme.fontSize}
-              fontWeight={theme.fontWeight}
-            />
-            <Switch>
-              <Route path='/' exact component={About} />
-              <Route path='/shop' exact component={Shop} />
-              <Route path='/' render={() => <div>404</div>} />
-            </Switch>
-          </div>
-          <Footer />
-        </BrowserRouter>
-      </ThemeProvider>
-    </ToggleContext.Provider>
+      <BrowserRouter>
+        <NavBar />
+        <div>
+          <GlobalStyle
+            fontFamily={theme.fontFamily}
+            fontColor={theme.fontColor}
+            backgroundColor={theme.backgroundColor}
+            fontSize={theme.fontSize}
+            fontWeight={theme.fontWeight}
+          />
+          <Switch>
+            <Route path='/' exact component={About} />
+            <Route path='/shop' exact component={Shop} />
+            <Route path='/' render={() => <div>404</div>} />
+          </Switch>
+        </div>
+        <Footer />
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

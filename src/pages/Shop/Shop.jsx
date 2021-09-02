@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import Typography from '../../components/Typography';
 import styled, { ThemeContext } from 'styled-components';
-import { ToggleContext } from '../../ToggleContext';
 import shopImage from '../../images/col6.jpg'
 import VerticalLine from '../../images/line.svg';
 import VerticalWhiteLine from '../../images/line-white.svg';
@@ -22,9 +21,8 @@ const Image = styled.div`
 
 
 const LinkContainer = styled.div`
-    box-shadow: ${props => props.darkMode ? '0px 0px 15px 5px #484c4d' : '0px 0px 15px 5px #a5aaac'};
-    background-color: ${props => props.darkMode ? '#4b504ca8' : '#dfe7e1a8'};
-
+    box-shadow: rgb(165 170 172) 0px 0px 15px 5px;
+    background-color: rgba(223, 231, 225, 0.66);
 
     padding: 20px;
     font-weight: bolder;
@@ -65,13 +63,10 @@ const LinkSubContainer = styled.div`
 `;
 
 function Shop() {
-    const theme = useContext(ThemeContext);
-    const { darkMode } = useContext(ToggleContext);
 
     return (
         <Image>
             <LinkContainer
-                darkMode={darkMode}
             >
                 <Typography variant='h2'>AMAZON</Typography>
 
@@ -89,7 +84,7 @@ function Shop() {
                                     }}
                                 >{link.name}
                                 </SpacedTypography>
-                                {link.name !== 'BOOKS' && <LineImage src={darkMode ? VerticalWhiteLine : VerticalLine} alt='Black Vertical Line' />}
+                                {link.name !== 'BOOKS' && <LineImage src={VerticalLine} alt='Black Vertical Line' />}
                             </React.Fragment>
                         )}
                     </LinkSubContainer>

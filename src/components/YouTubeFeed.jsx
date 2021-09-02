@@ -23,7 +23,7 @@ const VideoContainer = styled.div`
     }
 
     &::-webkit-scrollbar-thumb {
-        background-color: ${props => props.theme.fontColor};
+        background-color: black;
     }
 `;
 
@@ -53,10 +53,7 @@ function YouTubeFeed() {
     const ref = useRef();
     const isVisible = useOnScreen(ref);
     const [moveCounter, setMoveCounter] = useState(0);
-    const { darkMode } = useContext(ToggleContext);
     const theme = useContext(ThemeContext);
-
-
 
     useEffect(() => {
         if (isVisible) {
@@ -79,7 +76,6 @@ function YouTubeFeed() {
             <VideoContainer
                 isVisible={isVisible}
                 moveCounter={moveCounter}
-                mode={darkMode}
                 theme={theme}
             >
                 <Video frameBorder="0" allowFullScreen width="560" height="315" src="https://www.youtube.com/embed/xh8W8G-ZNLI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></Video>
