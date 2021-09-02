@@ -11,6 +11,7 @@ import breakpoints from '../breakpoints';
 import Icon from './Icon'
 
 const NavBarContainer = styled.div`
+    display: flex;
     padding: 20px;
     transition-duration: .5s;
     position: absolute;
