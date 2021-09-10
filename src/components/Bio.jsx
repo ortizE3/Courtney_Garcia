@@ -9,7 +9,6 @@ const BackgroundContainer = styled.div`
     background-color: black;
     color: white;
     padding: 50px 20px;
-    height: 80vh;
     display: flex;
 `
 

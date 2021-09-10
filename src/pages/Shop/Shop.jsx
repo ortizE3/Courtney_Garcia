@@ -19,7 +19,6 @@ const ShopImage = styled.div`
     position: relative;
 `;
 
-
 const LinkContainer = styled.div`
     box-shadow: rgb(165 170 172) 0px 0px 15px 5px;
     background-color: rgba(223, 231, 225, 0.66);
