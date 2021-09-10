@@ -23,16 +23,59 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
   <title>Courtney Garcia</title>
+  <style>
+    .glow-container {
+      background-color: white;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100vh;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+    }
+
+    .horizontal-line {
+      height: 10px;
+      width: 100px;
+      background-color: black;
+      animation: glow 2s infinite;
+      margin: 20px;
+    }
+
+    @keyframes glow {
+      0% {
+        box-shadow: 0px 0px 5px 5px white;
+      }
+
+      50% {
+        box-shadow: 0px 0px 5px 5px black;
+      }
+
+      100% {
+        box-shadow: 0px 0px 5px 5px white;
+      }
+    }
+  </style>
 
 </head>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root">
-    <div class="divLoader">
-      <svg class="svgLoader" viewBox="0 0 1024 1024" width="10em" height="10em">
-        <path fill="lightblue" d="./client/movie-review/public/logo192.png" />
-      </svg>
+    <div class="glow-container">
+      <div>
+        <div class="horizontal-line" style="animation-delay: .3s"></div>
+        <div class="horizontal-line" style="animation-delay: .6s"></div>
+        <div class="horizontal-line" style="animation-delay: .9s"></div>
+        <div class="horizontal-line" style="animation-delay: 1.2s"></div>
+        <div class="horizontal-line" style="animation-delay: 1.5s"></div>
+        <div class="horizontal-line" style="animation-delay: 1.8s"></div>
+      </div>
     </div>
   </div>
   <!--

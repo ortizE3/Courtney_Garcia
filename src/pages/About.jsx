@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import MainPicture from '../components/MainPicture';
 import Collabs from '../components/Collabs';
 import Typography from '../components/Typography';
+import LoadingGlow from '../components/Loading';
 
 const MainContainer = styled.div`
     max-width: 1200px;
@@ -35,13 +36,12 @@ const CenterContainer = styled.div`
     }
 `
 
-
 function About() {
     return (
         <React.Fragment>
             <MainPicture />
+            <Bio />
             <MainContainer>
-                <Bio />
                 <YouTubeFeed />
                 <Experience />
 

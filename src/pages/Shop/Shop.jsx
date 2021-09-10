@@ -1,9 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Typography from '../../components/Typography';
-import styled, { ThemeContext } from 'styled-components';
+import styled from 'styled-components';
 import shopImage from '../../images/col6.jpg'
 import VerticalLine from '../../images/line.svg';
-import VerticalWhiteLine from '../../images/line-white.svg';
 import { links } from './Links';
 
 const Image = styled.div`

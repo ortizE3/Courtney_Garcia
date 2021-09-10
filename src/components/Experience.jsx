@@ -5,8 +5,8 @@ import ImageHighlight from './ImageHighlight';
 import SectionHeader from './SectionHeader';
 
 const ExperienceContainer = styled.div`
-    margin: 0px 20px 0px 20px;
-    margin-top: 30px;
+    margin: 0px 20px;
+    padding-top: 50px;
     overflow-x: hidden;
 `;
 

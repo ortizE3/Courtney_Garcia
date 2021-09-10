@@ -4,9 +4,6 @@ import Typography from './Typography';
 import { ImPinterest2 as PinterestIcon } from 'react-icons/im';
 import { CgInstagram as InstagramIcon } from 'react-icons/cg';
 import { AiOutlineYoutube as YouTubeIcon } from 'react-icons/ai';
-import Icon from './Icon'
-
-
 
 const FooterContainer = styled.div`
     display: flex;

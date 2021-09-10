@@ -1,4 +1,4 @@
-import React, { useRef, useContext, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Typography from './Typography';
 import styled from 'styled-components';
 import { useOnScreen } from '../Hooks/hooks'
@@ -26,7 +26,6 @@ const Details = styled.div`
     opacity: 0;
     z-index: 999;
     transform: ${props => (props.isVisible || props.moveCounter > 0) ? 'translateX(0%)' : 'translateX(-100vh)'};
-
 
     transition-duration: 1s;
 

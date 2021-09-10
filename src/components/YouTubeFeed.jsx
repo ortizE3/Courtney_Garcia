@@ -3,18 +3,16 @@ import styled, { ThemeContext } from 'styled-components';
 import SectionHeader from './SectionHeader';
 import breakpoints from '../breakpoints.js';
 import { useOnScreen } from '../Hooks/hooks'
-import { ToggleContext } from '../ToggleContext';
-
 
 const SectionContainer = styled.div`
-    margin: 30px 20px 0px 20px;
+    padding: 50px 20px;
     overflow-x: hidden;
 `;
 
 const VideoContainer = styled.div`
     overflow-x: auto;
     white-space: nowrap;
-    padding: 20px 0px 20px 0px;
+    padding: 20px 0px;
     transition-duration: 1s;
     transform: ${props => (props.isVisible || props.moveCounter > 0) ? 'translateX(0%)' : 'translateX(100vw)'};
 

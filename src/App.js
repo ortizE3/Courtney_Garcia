@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { } from 'react'
 
 import NavBar from './components/NavBar.jsx';
 import About from './pages/About.jsx'
-import { ToggleContext } from './ToggleContext'
-import styled from 'styled-components';
 
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Shop from './pages/Shop/Shop.jsx';
-import Footer from './components/Footer'
+import Footer from './components/Footer';
 
 const commonAttr = {
   fontFamily: 'quasimoda, sans-serif',
