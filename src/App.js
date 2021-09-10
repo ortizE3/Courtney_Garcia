@@ -35,7 +35,6 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     height: 100vh;
-    transition-duration: .75s;
     font-family: ${props => props.fontFamily};
     font-weight: ${props => props.fontWeight};
     color: ${props => props.fontColor};
