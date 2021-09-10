@@ -14,7 +14,6 @@ const ImageContainer = styled.div`
 const Image = styled.img`
     width: 100%;
     transition-duration: 1s;
-    transform: ${props => (props.isVisible || props.moveCounter > 0) ? 'translateX(0%)' : 'translateX(-100vh)'};
 `;
 
 const Details = styled.div`
@@ -25,7 +24,6 @@ const Details = styled.div`
     height: 100%;
     opacity: 0;
     z-index: 999;
-    transform: ${props => (props.isVisible || props.moveCounter > 0) ? 'translateX(0%)' : 'translateX(-100vh)'};
 
     transition-duration: 1s;
 
@@ -43,23 +41,11 @@ const StyledDescription = styled(Typography)`
 
 function ImageHighlight(props) {
 
-    const ref = useRef();
-    const isVisible = useOnScreen(ref);
-    const [moveCounter, setMoveCounter] = useState(0);
 
-    useEffect(() => {
-        if (isVisible) {
-            setMoveCounter(moveCounter => moveCounter + 1)
-        }
-    }, [isVisible])
 
     return (
-        <ImageContainer
-            ref={ref}
-        >
+        <ImageContainer>
             <Details
-                isVisible={isVisible}
-                moveCounter={moveCounter}
             >
                 <StyledDescription>
                     <Typography
@@ -76,8 +62,6 @@ function ImageHighlight(props) {
 
             </Details>
             <Image
-                isVisible={isVisible}
-                moveCounter={moveCounter}
                 src={props.imgUrl}
                 alt="Grav Magazine" />
 

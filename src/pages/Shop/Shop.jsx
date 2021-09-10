@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Typography from '../../components/Typography';
 import styled from 'styled-components';
 import shopImage from '../../images/col6.jpg'
 import VerticalLine from '../../images/line.svg';
+import Loading from '../../components/Loading'
 import { links } from './Links';
 
-const Image = styled.div`
+const ShopImage = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
@@ -63,10 +64,19 @@ const LinkSubContainer = styled.div`
 
 function Shop() {
 
+    const [imgLoaded, setImgLoaded] = useState(true)
+
+    useEffect(() => {
+        const img = new Image()
+        img.src = shopImage
+        img.onload = () => setImgLoaded(false)
+    }, [])
+
+
     return (
-        <Image>
-            <LinkContainer
-            >
+        <ShopImage>
+            <Loading isLoading={imgLoaded} />
+            <LinkContainer>
                 <Typography variant='h2'>AMAZON</Typography>
 
                 <IndentedText>
@@ -89,7 +99,7 @@ function Shop() {
                     </LinkSubContainer>
                 </IndentedText>
             </LinkContainer>
-        </Image>
+        </ShopImage>
     )
 }
 

@@ -1,15 +1,16 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Courtney from '../images/about1.jpg';
-import CourtneySecond from '../images/about2.jpg';
-import { useOnScreen } from '../Hooks/hooks'
 import SectionHeader from './SectionHeader';
 import Typography from './Typography';
+import PlaceHolder from '../images/placeholder.jpg'
 
 const BackgroundContainer = styled.div`
     background-color: black;
     color: white;
     padding: 50px 20px;
+    height: 80vh;
+    display: flex;
 `
 
 const SectionContainer = styled.div`
@@ -29,7 +30,6 @@ const WordSection = styled.div`
     line-height: 1.5em;
     padding-right: 20px;
     transition-duration: 1s;
-    transform: ${props => (props.isVisible || props.moveCounter > 0) ? 'translateX(0%)' : 'translateX(-100vw)'};
 
 
     @media (max-width: 760px) {
@@ -41,49 +41,54 @@ const WordSection = styled.div`
     }
 `;
 
-const Image = styled.img`
+const BioImage = styled.img`
     height: 500px;
-    transition-duration: 1s;
-    transform: ${props => (props.isVisible || props.moveCounter > 0) ? 'translateX(0%)' : 'translateX(100vw)'};
 
     @media (max-width: 760px) {
         height: 400px;
     }
 `;
 
+const PlaceHolderImage = styled.img`
+    height: 500px;
+    width: 330px;
+
+    @media (max-width: 760px) {
+        height: 400px;
+        width: 330;
+    }
+`
+
 
 
 function Bio() {
 
-    const ref = useRef();
-    const isVisible = useOnScreen(ref);
-    const [moveCounter, setMoveCounter] = useState(0);
+    const [imgLoaded, setImgLoaded] = useState(false)
 
     useEffect(() => {
-        if (isVisible) {
-            setMoveCounter(moveCounter => moveCounter + 1)
-        }
-    }, [isVisible]);
+        const img = new Image()
+        img.src = Courtney
+        img.onload = () => setImgLoaded(true)
+    }, [])
 
     return (
         <BackgroundContainer>
-            <SectionContainer ref={ref}>
+            <SectionContainer >
                 <WordSection
-                    isVisible={isVisible}
-                    moveCounter={moveCounter}
                 >
                     <SectionHeader title='ABOUT' />
                     <Typography variant='b1'>'lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'</Typography>
                 </WordSection>
-
-                <Image
-                    src={Courtney}
-                    alt="Courtney"
-                    isVisible={isVisible}
-                    moveCounter={moveCounter}
-                    onMouseEnter={e => (e.currentTarget.src = CourtneySecond)}
-                    onMouseLeave={e => (e.currentTarget.src = Courtney)}
-                />
+                {imgLoaded ?
+                    <BioImage
+                        src={Courtney}
+                        alt="Courtney"
+                    /> :
+                    <PlaceHolderImage
+                        src={PlaceHolder}
+                        alt="PlaceHolder"
+                    />
+                }
             </SectionContainer>
         </BackgroundContainer>
     )
