@@ -1,4 +1,4 @@
-import React, { } from 'react'
+import React, { useEffect } from 'react'
 
 import NavBar from './components/NavBar.jsx';
 import About from './pages/About.jsx'
@@ -33,7 +33,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    margin: 0;
+    margin: 0px;
     height: 100vh;
     font-family: ${props => props.fontFamily};
     font-weight: ${props => props.fontWeight};

@@ -37,6 +37,9 @@ const CenterContainer = styled.div`
 `
 
 function About() {
+
+
+
     return (
         <React.Fragment>
             <MainPicture />

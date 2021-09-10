@@ -2,7 +2,7 @@ import React from "react";
 import styled, { keyframes } from 'styled-components';
 
 const GlowContainer = styled.div`
-    background-color: black;
+    background-color: white;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -18,38 +18,40 @@ const GlowContainer = styled.div`
 
 const glow = keyframes`
     0% {
-      box-shadow: 0px 0px 5px 5px #000000;
-    }
-
-    50% {
       box-shadow: 0px 0px 5px 5px white;
     }
 
+    50% {
+      box-shadow: 0px 0px 5px 5px black;
+    }
+
     100% {
-      box-shadow: 0px 0px 5px 5px #000000;
+      box-shadow: 0px 0px 5px 5px white;
     }
 `;
 
 const HorizontalGlow = styled.div`
     height: 10px;
     width: 100px;
-    background-color: white;
-    animation: ${glow} 2s infinite;
+    background-color: black;
+    animation: ${glow} 1s infinite;
     margin: 20px;
 `
 
 const LoadingGlow = (props) => {
     return (
         <GlowContainer style={{
-            display: props.isLoading ? '' : 'none'
+            display: props.isLoading ? '' : 'none',
+            opacity: props.isLoading ? 1 : 0,
+
         }}>
             <div>
+                <HorizontalGlow style={{ animationDelay: ".1s" }}></HorizontalGlow>
+                <HorizontalGlow style={{ animationDelay: ".2s" }}></HorizontalGlow>
                 <HorizontalGlow style={{ animationDelay: ".3s" }}></HorizontalGlow>
+                <HorizontalGlow style={{ animationDelay: ".4s" }}></HorizontalGlow>
+                <HorizontalGlow style={{ animationDelay: ".5s" }}></HorizontalGlow>
                 <HorizontalGlow style={{ animationDelay: ".6s" }}></HorizontalGlow>
-                <HorizontalGlow style={{ animationDelay: ".9s" }}></HorizontalGlow>
-                <HorizontalGlow style={{ animationDelay: "1.2s" }}></HorizontalGlow>
-                <HorizontalGlow style={{ animationDelay: "1.5s" }}></HorizontalGlow>
-                <HorizontalGlow style={{ animationDelay: "1.8s" }}></HorizontalGlow>
             </div>
         </GlowContainer>
     );
